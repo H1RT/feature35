@@ -135,6 +135,7 @@ For inquiries or permissions, contact daniel@section.store
     display: flex;
     flex-direction: column;
     width: 100%;
+    grid-area: content;
     align-items: {{ content_horizontal_align_mobile }};
   }
 
@@ -167,6 +168,7 @@ For inquiries or permissions, contact daniel@section.store
     margin-inline: auto;
     display: flex;
     flex-direction: column;
+    grid-area: features;
     align-items: flex-start;
     gap: {{ features_gap_mobile }}px;
   }
@@ -344,26 +346,30 @@ For inquiries or permissions, contact daniel@section.store
   /* Tablet/medium: place image and bullets side by side between 1000px and 1201px */
   @media(min-width: 1000px) and (max-width: 1201px) {
     .feature-body-{{ section.id }} {
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: 45% 55%;
+      grid-template-areas:
+        "content content"
+        "image features";
       gap: {{ layout_gap }};
       align-items: flex-start;
     }
 
     .feature-content-{{ section.id }} {
       width: 100%;
-      max-width: 360px;
+      max-width: none;
       align-items: {{ content_horizontal_align }};
-      margin-right: 24px;
+      margin-right: 0;
     }
 
     .feature-image-{{ section.id }} {
-      width: 45%;
+      width: 100%;
       max-width: none;
       margin-inline: 0;
     }
     
     .feature-features-{{ section.id }} {
-      width: 55%;
+      width: 100%;
       max-width: none;
       margin-inline: 0;
       align-items: {{ features_horizontal_align }};
