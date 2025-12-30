@@ -117,6 +117,10 @@ For inquiries or permissions, contact daniel@section.store
   .feature-item-{{ section.id }} {
     display: flex;
     gap: 8px;
+    align-items: center;
+    width: 100%;
+    max-width: 520px;
+    margin-inline: auto;
   }
 
   .feature-body-{{ section.id }} {
@@ -136,6 +140,8 @@ For inquiries or permissions, contact daniel@section.store
 
   .feature-image-{{ section.id }} {
     width: 100%;
+    max-width: 420px;
+    margin-inline: auto;
     border: {{ image_border_thickness }}px solid {{ image_border_color }};
     border-radius: {{ image_radius }}px;
     overflow: hidden;
@@ -157,9 +163,11 @@ For inquiries or permissions, contact daniel@section.store
 
   .feature-features-{{ section.id }} {
     width: 100%;
+    max-width: 540px;
+    margin-inline: auto;
     display: flex;
     flex-direction: column;
-    align-items: {{ features_horizontal_align_mobile }};
+    align-items: flex-start;
     gap: {{ features_gap_mobile }}px;
   }
 
@@ -176,7 +184,7 @@ For inquiries or permissions, contact daniel@section.store
   }
 
   .feature-text-{{ section.id }} {
-    text-align: {{ features_align_mobile }};
+    text-align: left;
   }
 
   .feature-text-{{ section.id }} * {
@@ -283,12 +291,16 @@ For inquiries or permissions, contact daniel@section.store
 
     .feature-image-{{ section.id }} {
       width: 30%;
+      max-width: none;
+      margin-inline: 0;
     }
     
     .feature-features-{{ section.id }} {
       width: 35%;
       align-items: {{ features_horizontal_align }};
       gap: {{ features_gap }}px;
+      max-width: none;
+      margin-inline: 0;
     }
 
     .feature-feature-icon-{{ section.id }} img,
