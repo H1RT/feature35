@@ -339,9 +339,44 @@ For inquiries or permissions, contact daniel@section.store
     .section-{{ section.id }} {
       border-left: solid {{ border_color }} {{ border_thickness }}px;
       border-right: solid {{ border_color }} {{ border_thickness }}px;
+  }
+
+  /* Tablet/medium: place image and bullets side by side between 1000px and 1201px */
+  @media(min-width: 1000px) and (max-width: 1201px) {
+    .feature-body-{{ section.id }} {
+      flex-direction: row;
+      gap: {{ layout_gap }};
+      align-items: flex-start;
+    }
+
+    .feature-content-{{ section.id }} {
+      width: 100%;
+      max-width: 360px;
+      align-items: {{ content_horizontal_align }};
+      margin-right: 24px;
+    }
+
+    .feature-image-{{ section.id }} {
+      width: 45%;
+      max-width: none;
+      margin-inline: 0;
     }
     
-    @media(min-width: 1202px) {
+    .feature-features-{{ section.id }} {
+      width: 55%;
+      max-width: none;
+      margin-inline: 0;
+      align-items: {{ features_horizontal_align }};
+      gap: {{ features_gap }};
+    }
+
+    .feature-item-{{ section.id }} {
+      margin-inline: 0;
+      max-width: none;
+    }
+  }
+
+  @media(min-width: 1202px) {
       .section-{{ section.id }} {
         border-left: 0px;
         border-right: 0px;
