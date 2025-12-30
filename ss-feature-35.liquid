@@ -142,7 +142,7 @@ For inquiries or permissions, contact daniel@section.store
   .feature-image-{{ section.id }} {
     width: 100%;
     max-width: 420px;
-    margin-inline: auto;
+    margin: 16px auto;
     border: {{ image_border_thickness }}px solid {{ image_border_color }};
     border-radius: {{ image_radius }}px;
     overflow: hidden;
@@ -358,14 +358,14 @@ For inquiries or permissions, contact daniel@section.store
     .feature-content-{{ section.id }} {
       width: 100%;
       max-width: none;
-      align-items: {{ content_horizontal_align }};
+      align-items: center;
       margin-right: 0;
     }
 
     .feature-image-{{ section.id }} {
       width: 100%;
       max-width: none;
-      margin-inline: 0;
+      margin: 16px;
     }
     
     .feature-features-{{ section.id }} {
@@ -374,6 +374,8 @@ For inquiries or permissions, contact daniel@section.store
       margin-inline: 0;
       align-items: {{ features_horizontal_align }};
       gap: {{ features_gap }};
+      justify-content: center;
+      height: 100%;
     }
 
     .feature-item-{{ section.id }} {
